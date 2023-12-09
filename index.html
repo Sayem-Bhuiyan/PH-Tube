@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH Tube</title>
+
+    <!-- daisyUi and tailwind link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- google font Inter link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+        .active-button {
+            background-color: #FF1F3D;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="container mx-auto font-inter">
+    <header>
+        <nav class="mt-12 flex items-center justify-between">
+            <a href="#"><img src="Assets/images/Logo.png" alt=""></a>
+            <button class="btn btn-active px-5 text-lg font-medium">Sort by view</button>
+            <button class="btn btn-active text-white bg-[#FF1F3D] px-5 text-lg font-medium">Blog</button>
+        </nav>
+        <hr class="my-8">
+    </header>
+
+    <main>
+        <section class="flex justify-center mb-10">
+            <div class="text-center w-96 flex justify-center items-center">
+                <div id="category-container" role="tablist" class="tabs tabs-boxed flex justify-center items-center gap-5">
+
+
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- scripts -->
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>
