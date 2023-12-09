@@ -14,12 +14,18 @@ const loadCategory = async () => {
     categories.forEach((category) => {
         const tab = document.createElement('tab');
         tab.innerHTML = `
-        <a id="active-btn" role="tab" class="tab text-lg font-semibold bg-[#19191926] px-5text-center rounded flex justify-center items-center">${category.category}</a>
+        <a id="active-btn" onclick="loadData('${category.category_id}')" role="tab" class="tab text-lg font-semibold bg-[#19191926] px-5text-center rounded flex justify-center items-center">${category.category}</a>
         `;
         categoryContainer.appendChild(tab);
     });
 
 };
+
+const loadData = async (id) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
+    const data = await res.json();
+    console.log(data.data);
+}
 
 document.addEventListener('DOMContentLoaded', function(){
     let activeBtn = document.getElementById('active-btn');
