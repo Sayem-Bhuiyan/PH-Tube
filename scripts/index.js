@@ -44,9 +44,10 @@ const loadData = async (id) => {
     const cardContainer = document.getElementById('card-container');
     cardContainer.textContent = '';
 
+    
+
     singleData.forEach((data) => {
         const div = document.createElement('div');
-        console.log(data)
         div.innerHTML = `
             
             <div class="card card-compact bg-base-100">
@@ -54,7 +55,7 @@ const loadData = async (id) => {
                 <figure><img class=" rounded-lg" src="${data?.thumbnail}" alt="Card Photo" /></figure>
                 <div>
                     ${data?.others?.posted_date ? `
-                    <p class="bg-black text-white px-2 py-1  absolute -mt-10 ml-44 rounded-md text-base font-normal"><span></span>hrs <span>min ago</span></p> 
+                    <p id="posted-date" class="bg-black text-white px-2 py-1  absolute -mt-10 ml-44 rounded-md text-base font-normal">${data?.others?.posted_date} Sec</p> 
                     ` : ''};
                 </div>
             </div>
@@ -96,19 +97,13 @@ const loadData = async (id) => {
                 
             </div>
         </div>
-
+        
         `;
         cardContainer.appendChild(div)
+        
     })
     
 }
-
-document.addEventListener('DOMContentLoaded', function(){
-    let activeBtn = document.getElementById('active-btn');
-    activeBtn.addEventListener('click', function () {
-        activeBtn.classList.add('active-button');
-    });
-});
 
 
 loadCategory();
